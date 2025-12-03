@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500;600&display=swap');
+
+/**
+ * Any CSS placed here will be global and applied to the entire site.
+ */
+
+:root {
+  /* --- Pastel Color Palette --- */
+  --ifm-color-primary: #E8998D; /* Coral pink for CTAs/Buttons */
+  --ifm-color-primary-dark: #E37D6E;
+  --ifm-color-primary-darker: #E16D5C;
+  --ifm-color-primary-darkest: #D94E3A;
+  --ifm-color-primary-light: #ECB0A6;
+  --ifm-color-primary-lighter: #EFC0B6;
+  --ifm-color-primary-lightest: #F5D9D2;
+
+  --ifm-color-secondary: #83C0C1; /* Light teal for cards */
+  --ifm-color-success: #A8E0DC; /* Mint for accents */
+  --ifm-color-danger: #E8998D; /* Coral for danger */
+  --ifm-color-warning: #F7DC88; /* Soft yellow for highlights */
+  --ifm-color-info: #3C7A89; /* Teal blue for info */
+
+  --ifm-background-color: #3C7A89; /* Teal blue background */
+  --ifm-background-surface-color: #83C0C1; /* Light teal for cards */
+  --ifm-font-color-base: #FFFFFF; /* White for headings */
+  --ifm-font-color-secondary: #2C5F6F; /* Darker teal for body text */
+
+  --ifm-color-emphasis-100: #A8E0DC; /* Mint for lightest emphasis */
+  --ifm-color-emphasis-200: #83C0C1; /* Light teal */
+  --ifm-color-emphasis-300: #5FA5A6; /* Medium teal */
+  --ifm-color-emphasis-400: #4A8D8E;
+  --ifm-color-emphasis-500: #2C5F6F; /* Darker teal */
+
+  --ifm-global-border-color: #A8E0DC;
+  --ifm-global-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  /* --- Typography --- */
+  --ifm-font-family-base: 'Inter', sans-serif;
+  --ifm-font-family-monospace: 'Fira Code', monospace;
+  --ifm-h1-font-family: 'Poppins', sans-serif;
+  --ifm-h2-font-family: 'Poppins', sans-serif;
+  --ifm-h3-font-family: 'Poppins', sans-serif;
+  --ifm-h4-font-family: 'Poppins', sans-serif;
+  --ifm-h5-font-family: 'Poppins', sans-serif;
+  --ifm-h6-font-family: 'Poppins', sans-serif;
+
+  /* --- Spacing --- */
+  --ifm-spacing-unit: 1rem; /* Docusaurus default, we'll use multiples of 0.5rem (8px) */
+  --ifm-container-width: 1200px; /* Max width for content */
+  --ifm-gap-sm: 0.5rem; /* 8px */
+  --ifm-gap-md: 1rem; /* 16px */
+  --ifm-gap-lg: 1.5rem; /* 24px */
+  --ifm-gap-xl: 2rem; /* 32px */
+}
+
+/* Ensure consistent pastel theme in dark mode */
+[data-theme='dark'] {
+  --ifm-color-primary: #E8998D;
+  --ifm-color-primary-dark: #E37D6E;
+  --ifm-color-primary-darker: #E16D5C;
+  --ifm-color-primary-darkest: #D94E3A;
+  --ifm-color-primary-light: #ECB0A6;
+  --ifm-color-primary-lighter: #EFC0B6;
+  --ifm-color-primary-lightest: #F5D9D2;
+
+  --ifm-color-secondary: #83C0C1;
+  --ifm-color-success: #A8E0DC;
+  --ifm-color-danger: #E8998D;
+  --ifm-color-warning: #F7DC88;
+  --ifm-color-info: #3C7A89;
+
+  --ifm-background-color: #3C7A89;
+  --ifm-background-surface-color: #83C0C1;
+  --ifm-font-color-base: #FFFFFF;
+  --ifm-font-color-secondary: #2C5F6F;
+
+  --ifm-color-emphasis-100: #A8E0DC;
+  --ifm-color-emphasis-200: #83C0C1;
+  --ifm-color-emphasis-300: #5FA5A6;
+  --ifm-color-emphasis-400: #4A8D8E;
+  --ifm-color-emphasis-500: #2C5F6F;
+
+  --ifm-global-border-color: #A8E0DC;
+  --ifm-global-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Global Base Styles --- */
+body {
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-font-color-base);
+  background-color: var(--ifm-background-color);
+  line-height: 1.6; /* Improved global line-height */
+}
+
+/* No specific dark mode body background, as we're enforcing a light theme */
+html[data-theme='dark'] body {
+  background-color: var(--ifm-background-color);
+}
+
+/* --- Typography Styles --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-h1-font-family);
+  color: var(--ifm-font-color-base);
+  font-weight: 600;
+  margin-top: var(--ifm-gap-xl);
+  margin-bottom: var(--ifm-gap-lg);
+}
+
+p, ul, ol, pre {
+  margin-bottom: var(--ifm-gap-lg);
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: var(--ifm-gap-md);
+}
+
+code, pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* --- Global Layout & Spacing --- */
+.container {
+  max-width: var(--ifm-container-width);
+  padding: 0 var(--ifm-gap-lg); /* Global horizontal padding */
+  margin: 0 auto;
+}
+
+.main-wrapper, .docMainContainer {
+  /* These will now be managed by .container */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media screen and (max-width: 996px) {
+  .main-wrapper, .docMainContainer {
+    max-width: var(--ifm-container-width);
+    margin: 0 auto;
+    padding-left: 0; /* Managed by .container */
+    padding-right: 0; /* Managed by .container */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 var(--ifm-gap-md); /* Mobile horizontal padding */
+  }
+}
+
+section {
+  padding-top: var(--ifm-gap-xl);
+  padding-bottom: var(--ifm-gap-xl);
+}
+
+/* --- Navbar --- */
+.navbar {
+  background: linear-gradient(135deg, #3C7A89, #5FA5A6); /* Teal gradient */
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ifm-global-shadow);
+  border-bottom: 2px solid var(--ifm-global-border-color);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+html[data-theme='dark'] .navbar {
+  background: linear-gradient(135deg, #3C7A89, #5FA5A6);
+  box-shadow: var(--ifm-global-shadow);
+}
+
+.navbar__title, .navbar__link {
+  color: var(--ifm-font-color-base); /* White text */
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-warning); /* Yellow on hover */
+  transform: scale(1.05);
+}
+
+.navbar__logo {
+  filter: drop-shadow(0 2px 8px rgba(247, 220, 136, 0.4)); /* Yellow glow */
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  background: linear-gradient(180deg, #83C0C1, #A8E0DC); /* Vertical teal to mint gradient */
+  border-right: 2px solid var(--ifm-global-border-color);
+  padding-top: var(--ifm-gap-md);
+  padding-bottom: var(--ifm-gap-md);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .sidebar {
+  background: linear-gradient(180deg, #83C0C1, #A8E0DC);
+}
+
+.menu__link {
+  padding: 0.7rem 1rem;
+  border-radius: 24px; /* Soft, rounded cards */
+  transition: background-color 0.2s ease, color 0.2s ease, border-left-color 0.2s, transform 0.2s ease;
+  font-weight: 500;
+  color: var(--ifm-font-color-base);
+  display: flex;
+  align-items: center;
+  border-left: 3px solid transparent;
+}
+
+.menu__link:hover {
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3)); /* Mint overlay */
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  border-left-color: var(--ifm-color-warning); /* Yellow highlight */
+  transform: scale(1.02);
+}
+
+.menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1); /* Mint to light teal gradient */
+  color: var(--ifm-font-color-base);
+  box-shadow: var(--ifm-global-shadow);
+  font-weight: 600;
+  border-left-color: var(--ifm-color-warning); /* Yellow indicator */
+}
+
+/* Consistent pastel theme in dark mode */
+html[data-theme='dark'] .menu__link:hover {
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3));
+  color: var(--ifm-font-color-base);
+  transform: scale(1.02);
+}
+
+html[data-theme='dark'] .menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  color: var(--ifm-font-color-base);
+}
+
+/* --- Content Area & Cards --- */
+.theme-doc-markdown pre,
+.theme-doc-markdown .alert {
+  background: linear-gradient(135deg, #83C0C1, #A8E0DC); /* Light teal to mint gradient */
+  border: 1px solid var(--ifm-global-border-color);
+  border-radius: 24px; /* Soft, rounded cards */
+  padding: var(--ifm-gap-md);
+  box-shadow: var(--ifm-global-shadow);
+  margin-bottom: var(--ifm-gap-xl);
+  transition: all 0.3s ease;
+  color: var(--ifm-font-color-secondary);
+}
+
+/* Remove dark theme specific shadows for pre/alert as we are enforcing light theme */
+html[data-theme='dark'] .theme-doc-markdown pre,
+html[data-theme='dark'] .theme-doc-markdown .alert {
+  box-shadow: var(--ifm-global-shadow);
+}
+
+.theme-doc-markdown a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 123, 255, 0.3); /* Primary color for link underline */
+  transition: all 0.2s ease;
+}
+
+.theme-doc-markdown a:hover {
+  color: var(--ifm-color-primary-dark);
+  border-bottom-color: var(--ifm-color-primary-dark);
+  text-decoration: underline; /* Added underline on hover */
+}
+
+.theme-doc-markdown img {
+  border-radius: 8px; /* Slightly less rounded */
+  box-shadow: var(--ifm-global-shadow); /* Use global shadow */
+  max-width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Remove dark theme specific shadows for images as we are enforcing light theme */
+html[data-theme='dark'] .theme-doc-markdown img {
+  box-shadow: var(--ifm-global-shadow);
+}
+
+/* --- Buttons --- */
+.button--primary {
+  background-color: var(--ifm-color-primary); /* Coral pink */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 24px; /* Soft rounded */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: var(--ifm-global-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); /* Hover scale effect */
+}
+
+.button--secondary {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1); /* Mint to light teal */
+  color: var(--ifm-font-color-secondary);
+  border: 2px solid var(--ifm-color-success);
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-weight: 500;
+  box-shadow: var(--ifm-global-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+html[data-theme='dark'] .button--secondary {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  box-shadow: var(--ifm-global-shadow);
+}
+
+.button--secondary:hover {
+  background: linear-gradient(135deg, #83C0C1, #A8E0DC);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05);
+  color: var(--ifm-font-color-base);
+}
+
+html[data-theme='dark'] .button--secondary:hover {
+  background: linear-gradient(135deg, #83C0C1, #A8E0DC);
+  transform: scale(1.05);
+}
+
+/* --- Auth Components (Forms & Login Button) --- */
+form {
+  background: linear-gradient(135deg, #83C0C1, #A8E0DC);
+  border-radius: 24px; /* Soft, rounded cards */
+  box-shadow: var(--ifm-global-shadow);
+  padding: var(--ifm-gap-lg);
+  margin: var(--ifm-gap-xl) auto;
+  max-width: 450px;
+  border: 2px solid var(--ifm-global-border-color);
+  transition: all 0.3s ease;
+}
+
+/* Remove dark theme specific shadow for forms as we are enforcing light theme */
+html[data-theme='dark'] form {
+  box-shadow: var(--ifm-global-shadow);
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"],
+form select {
+  padding: 10px 14px;
+  border: 2px solid var(--ifm-global-border-color);
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-font-color-secondary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+html[data-theme='dark'] form input[type="email"],
+html[data-theme='dark'] form input[type="password"],
+html[data-theme='dark'] form input[type="text"],
+html[data-theme='dark'] form select {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: var(--ifm-global-border-color);
+  color: var(--ifm-font-color-secondary);
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="text"]:focus,
+form select:focus {
+  outline: none;
+  border-color: var(--ifm-color-warning); /* Yellow highlight */
+  box-shadow: 0 0 0 3px rgba(247, 220, 136, 0.3);
+  transform: scale(1.02);
+}
+
+form button[type="submit"] {
+  background-color: var(--ifm-color-primary); /* Coral pink */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: var(--ifm-global-shadow);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 100%;
+  margin-top: var(--ifm-gap-lg);
+}
+
+form button[type="submit"]:hover {
+  background: var(--ifm-color-primary-dark);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.05); /* Hover scale effect */
+}
+
+/* Original AuthButton Styling */
+.AuthButton-container button {
+  background-color: var(--ifm-color-primary); /* Coral pink */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 24px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: var(--ifm-global-shadow);
+}
+
+.AuthButton-container button:hover {
+  background-color: var(--ifm-color-primary-dark);
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(232, 153, 141, 0.3); /* Coral glow */
+}
+
+/* --- Footer --- */
+footer.footer--dark {
+  background-color: var(--ifm-background-surface-color); /* Light background for footer */
+  border-top: 1px solid var(--ifm-global-border-color);
+  padding: var(--ifm-gap-xl) 0 !important; /* Adjusted padding */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Remove dark theme specific footer background and border as we are enforcing light theme */
+html[data-theme='dark'] footer.footer--dark {
+  background-color: var(--ifm-background-surface-color) !important;
+  border-top-color: var(--ifm-global-border-color) !important;
+}
+
+footer.footer--dark .footer__copyright,
+footer.footer--dark .footer__link-item {
+  color: var(--ifm-font-color-secondary) !important; /* Use secondary font color */
+  transition: color 0.2s ease;
+}
+
+/* Remove dark theme specific footer text color as we are enforcing light theme */
+html[data-theme='dark'] footer.footer--dark .footer__copyright,
+html[data-theme='dark'] footer.footer--dark .footer__link-item {
+  color: var(--ifm-font-color-secondary) !important;
+}
+
+footer.footer--dark .footer__link-item:hover {
+  color: var(--ifm-color-primary) !important;
+  transition: color 0.2s ease;
+}
+
+/* Remove dark theme specific footer link hover color as we are enforcing light theme */
+html[data-theme='dark'] footer.footer--dark .footer__link-item:hover {
+  color: var(--ifm-color-primary) !important;
+}
+
+footer.footer--dark .footer__title {
+  color: var(--ifm-font-color-base) !important; /* Use base font color */
+  font-weight: 600;
+  margin-bottom: var(--ifm-gap-md); /* Adjusted margin */
+}
+
+/* Ensure responsiveness for mobile, tablet, desktop */
+/* --- Chatbot Pulse Animation --- */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 153, 141, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(232, 153, 141, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 153, 141, 0);
+  }
+}
+
+.chat-floating-button {
+  animation: pulse 2s infinite;
+  background: linear-gradient(135deg, #E8998D, #ECB0A6) !important;
+  border-radius: 50% !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.chat-floating-button:hover {
+  transform: scale(1.1) !important;
+  animation: none !important;
+  box-shadow: 0 12px 40px rgba(232, 153, 141, 0.4) !important;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  :root {
+    --ifm-h1-font-size: 2.2rem;
+    --ifm-h2-font-size: 1.8rem;
+    --ifm-gap-lg: 1rem;
+    --ifm-gap-md: 0.75rem;
+  }
+
+  .navbar__title {
+    font-size: 1rem;
+  }
+
+  .sidebar {
+    padding-top: var(--ifm-gap-md);
+    padding-bottom: var(--ifm-gap-md);
+  }
+
+  .menu__link {
+    padding: 0.6rem var(--ifm-gap-md);
+  }
+
+  .button--primary, .button--secondary {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  form {
+    padding: var(--ifm-gap-lg);
+    margin: var(--ifm-gap-lg) auto;
+    max-width: 90%;
+  }
+}

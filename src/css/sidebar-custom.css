@@ -1,0 +1,164 @@
+/* Sidebar Styling */
+
+.theme-doc-sidebar-container {
+  background: linear-gradient(180deg, #83C0C1, #A8E0DC); /* Vertical teal to mint gradient */
+  border-right: 2px solid var(--ifm-global-border-color);
+  padding-top: var(--ifm-gap-md);
+  padding-bottom: var(--ifm-gap-md);
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .theme-doc-sidebar-container {
+  background: linear-gradient(180deg, #83C0C1, #A8E0DC);
+  border-color: var(--ifm-global-border-color);
+}
+
+.menu__list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.menu__list-item {
+  margin-bottom: 0.25rem;
+}
+
+.menu__link {
+  color: var(--ifm-font-color-base);
+  background-color: transparent;
+  padding: 0.7rem 1rem;
+  border-radius: 24px; /* Soft, rounded cards */
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid transparent;
+}
+
+.menu__link:hover {
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3)); /* Mint overlay */
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+  border-left-color: var(--ifm-color-warning); /* Yellow highlight */
+  transform: scale(1.02);
+}
+
+.menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1); /* Mint to light teal gradient */
+  color: var(--ifm-font-color-base);
+  box-shadow: var(--ifm-global-shadow);
+  font-weight: 600;
+  border-left-color: var(--ifm-color-warning); /* Yellow indicator */
+}
+
+/* Consistent pastel theme in dark mode */
+html[data-theme='dark'] .menu__link:hover {
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3));
+  color: var(--ifm-font-color-base);
+  transform: scale(1.02);
+}
+
+html[data-theme='dark'] .menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  color: var(--ifm-font-color-base);
+}
+
+
+/* Styling for collapsible categories (chapter titles) */
+.theme-doc-sidebar-item-category-parent > .menu__list-item-collapsible-header > .menu__link {
+  color: var(--ifm-font-color-base);
+  background: linear-gradient(135deg, #F7DC88, #FFE5A0); /* Yellow gradient for chapter badges */
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.25rem;
+  border: 2px solid var(--ifm-color-warning);
+  box-shadow: var(--ifm-global-shadow);
+  border-radius: 24px; /* Soft, rounded */
+  letter-spacing: 0;
+  text-transform: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for chapter titles */
+.theme-doc-sidebar-item-category-parent > .menu__list-item-collapsible-header > .menu__link:hover {
+  background: linear-gradient(135deg, #FFE5A0, #F7DC88); /* Reverse gradient on hover */
+  box-shadow: 0 12px 40px rgba(247, 220, 136, 0.3); /* Yellow glow */
+  transform: scale(1.02);
+  text-decoration: none;
+}
+
+/* Caret for chapter titles */
+.theme-doc-sidebar-item-category-parent .menu__caret {
+  color: var(--ifm-font-color-secondary); /* Secondary font color for caret */
+  font-size: 1em;
+}
+
+
+/* Arrow/icon for collapsible items */
+.menu__caret {
+  color: var(--ifm-font-color-secondary); /* Secondary font color for caret */
+  transition: transform 0.2s;
+}
+
+.menu__list-item--collapsed .menu__caret {
+  transform: rotate(-90deg);
+}
+
+/* Adjust padding for nested items */
+.menu__list-item-collapsible .menu__list {
+  padding-left: 1rem;
+  border-left: 1px solid var(--ifm-color-emphasis-200); /* Lighter border for nested block */
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Ensure nested links also have appropriate styling */
+.menu__list-item-collapsible .menu__link {
+  color: var(--ifm-font-color-base);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.9em;
+  font-weight: normal;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid transparent;
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.menu__list-item-collapsible .menu__link::before {
+  display: none;
+}
+
+.menu__list-item-collapsible .menu__link:hover {
+  color: var(--ifm-font-color-base);
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3)); /* Mint overlay */
+  border-left-color: var(--ifm-color-warning);
+  transform: scale(1.02);
+}
+
+.menu__list-item-collapsible .menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  color: var(--ifm-font-color-base);
+  border-left-color: var(--ifm-color-warning);
+  font-weight: 600;
+}
+
+html[data-theme='dark'] .menu__list-item-collapsible .menu__link:hover {
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.3), rgba(131, 192, 193, 0.3));
+  color: var(--ifm-font-color-base);
+  transform: scale(1.02);
+}
+
+html[data-theme='dark'] .menu__list-item-collapsible .menu__link--active {
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  color: var(--ifm-font-color-base);
+}
