@@ -5,7 +5,7 @@
  */
 
 :root {
-  /* --- Pastel Color Palette --- */
+  /* --- Beautiful Pastel Color Palette --- */
   --ifm-color-primary: #E8998D; /* Coral pink for CTAs/Buttons */
   --ifm-color-primary-dark: #E37D6E;
   --ifm-color-primary-darker: #E16D5C;
@@ -13,27 +13,35 @@
   --ifm-color-primary-light: #ECB0A6;
   --ifm-color-primary-lighter: #EFC0B6;
   --ifm-color-primary-lightest: #F5D9D2;
+  --ifm-color-primary-rgb: 232, 153, 141; /* ADDED */
 
   --ifm-color-secondary: #83C0C1; /* Light teal for cards */
   --ifm-color-success: #A8E0DC; /* Mint for accents */
   --ifm-color-danger: #E8998D; /* Coral for danger */
   --ifm-color-warning: #F7DC88; /* Soft yellow for highlights */
   --ifm-color-info: #3C7A89; /* Teal blue for info */
+  --ifm-color-success-rgb: 168, 224, 220; /* FIXED - now unique */
+  --ifm-color-secondary-rgb: 131, 192, 193; /* ADDED */
+  --ifm-color-warning-rgb: 247, 220, 136; /* ADDED */
+  --ifm-color-info-bright: #007bff; /* ADDED */
 
-  --ifm-background-color: #3C7A89; /* Teal blue background */
-  --ifm-background-surface-color: #83C0C1; /* Light teal for cards */
-  --ifm-font-color-base: #FFFFFF; /* White for headings */
-  --ifm-font-color-secondary: #2C5F6F; /* Darker teal for body text */
+  /* Light backgrounds with pastel teal */
+  --ifm-background-color: #E8F5F7; /* Very light teal background */
+  --ifm-background-surface-color: #FFFFFF; /* White for cards */
 
-  --ifm-color-emphasis-100: #A8E0DC; /* Mint for lightest emphasis */
-  --ifm-color-emphasis-200: #83C0C1; /* Light teal */
-  --ifm-color-emphasis-300: #5FA5A6; /* Medium teal */
-  --ifm-color-emphasis-400: #4A8D8E;
-  --ifm-color-emphasis-500: #2C5F6F; /* Darker teal */
+  /* Dark text for readability */
+  --ifm-font-color-base: #1a1a1a; /* Almost black for main text */
+  --ifm-font-color-secondary: #2C5F6F; /* Dark teal for secondary text */
+
+  --ifm-color-emphasis-100: #F0F9FA; /* Lightest teal */
+  --ifm-color-emphasis-200: #D4EEEF; /* Very light teal */
+  --ifm-color-emphasis-300: #A8E0DC; /* Light mint */
+  --ifm-color-emphasis-400: #83C0C1; /* Medium teal */
+  --ifm-color-emphasis-500: #5FA5A6; /* Darker teal */
 
   --ifm-global-border-color: #A8E0DC;
-  --ifm-global-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --ifm-global-shadow: 0 8px 32px rgba(60, 122, 137, 0.15);
+  --shadow-color: rgba(60, 122, 137, 0.1);
 
   /* --- Typography --- */
   --ifm-font-family-base: 'Inter', sans-serif;
@@ -54,7 +62,7 @@
   --ifm-gap-xl: 2rem; /* 32px */
 }
 
-/* Ensure consistent pastel theme in dark mode */
+/* Consistent pastel theme in dark mode */
 [data-theme='dark'] {
   --ifm-color-primary: #E8998D;
   --ifm-color-primary-dark: #E37D6E;
@@ -70,20 +78,20 @@
   --ifm-color-warning: #F7DC88;
   --ifm-color-info: #3C7A89;
 
-  --ifm-background-color: #3C7A89;
-  --ifm-background-surface-color: #83C0C1;
-  --ifm-font-color-base: #FFFFFF;
+  --ifm-background-color: #E8F5F7;
+  --ifm-background-surface-color: #FFFFFF;
+  --ifm-font-color-base: #1a1a1a;
   --ifm-font-color-secondary: #2C5F6F;
 
-  --ifm-color-emphasis-100: #A8E0DC;
-  --ifm-color-emphasis-200: #83C0C1;
-  --ifm-color-emphasis-300: #5FA5A6;
-  --ifm-color-emphasis-400: #4A8D8E;
-  --ifm-color-emphasis-500: #2C5F6F;
+  --ifm-color-emphasis-100: #F0F9FA;
+  --ifm-color-emphasis-200: #D4EEEF;
+  --ifm-color-emphasis-300: #A8E0DC;
+  --ifm-color-emphasis-400: #83C0C1;
+  --ifm-color-emphasis-500: #5FA5A6;
 
   --ifm-global-border-color: #A8E0DC;
-  --ifm-global-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.1);
+  --ifm-global-shadow: 0 8px 32px rgba(60, 122, 137, 0.15);
+  --shadow-color: rgba(60, 122, 137, 0.1);
 }
 
 /* --- Global Base Styles --- */
@@ -156,7 +164,7 @@ section {
 
 /* --- Navbar --- */
 .navbar {
-  background: linear-gradient(135deg, #3C7A89, #5FA5A6); /* Teal gradient */
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1); /* Mint to light teal gradient */
   backdrop-filter: blur(10px);
   box-shadow: var(--ifm-global-shadow);
   border-bottom: 2px solid var(--ifm-global-border-color);
@@ -165,23 +173,23 @@ section {
 }
 
 html[data-theme='dark'] .navbar {
-  background: linear-gradient(135deg, #3C7A89, #5FA5A6);
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
   box-shadow: var(--ifm-global-shadow);
 }
 
 .navbar__title, .navbar__link {
-  color: var(--ifm-font-color-base); /* White text */
+  color: #1a1a1a !important; /* Dark text for contrast */
   transition: all 0.2s ease;
   font-weight: 600;
 }
 
 .navbar__link:hover {
-  color: var(--ifm-color-warning); /* Yellow on hover */
+  color: #E8998D !important; /* Coral on hover */
   transform: scale(1.05);
 }
 
 .navbar__logo {
-  filter: drop-shadow(0 2px 8px rgba(247, 220, 136, 0.4)); /* Yellow glow */
+  filter: drop-shadow(0 2px 8px rgba(232, 153, 141, 0.4)); /* Coral glow */
 }
 
 /* --- Sidebar --- */
@@ -284,7 +292,7 @@ html[data-theme='dark'] .theme-doc-markdown img {
 
 /* --- Buttons --- */
 .button--primary {
-  background-color: var(--ifm-color-primary); /* Coral pink */
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
   border: none;
   color: white;
   padding: 10px 20px;
@@ -381,7 +389,7 @@ form select:focus {
 }
 
 form button[type="submit"] {
-  background-color: var(--ifm-color-primary); /* Coral pink */
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
   border: none;
   color: white;
   padding: 12px 20px;
@@ -396,14 +404,14 @@ form button[type="submit"] {
 }
 
 form button[type="submit"]:hover {
-  background: var(--ifm-color-primary-dark);
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   transform: scale(1.05); /* Hover scale effect */
 }
 
 /* Original AuthButton Styling */
 .AuthButton-container button {
-  background-color: var(--ifm-color-primary); /* Coral pink */
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
   color: white;
   border: none;
   cursor: pointer;
@@ -415,9 +423,7 @@ form button[type="submit"]:hover {
 }
 
 .AuthButton-container button:hover {
-  background-color: var(--ifm-color-primary-dark);
-  transform: scale(1.05);
-  box-shadow: 0 8px 24px rgba(232, 153, 141, 0.3); /* Coral glow */
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark), var(--ifm-color-primary-darker));
 }
 
 /* --- Footer --- */
@@ -478,7 +484,7 @@ footer.footer--dark .footer__title {
 
 .chat-floating-button {
   animation: pulse 2s infinite;
-  background: linear-gradient(135deg, #E8998D, #ECB0A6) !important;
+  background: linear-gradient(135deg, var(--ifm-color-info), #2C5F6F) !important;
   border-radius: 50% !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
   transition: all 0.3s ease !important;
@@ -487,7 +493,7 @@ footer.footer--dark .footer__title {
 .chat-floating-button:hover {
   transform: scale(1.1) !important;
   animation: none !important;
-  box-shadow: 0 12px 40px rgba(232, 153, 141, 0.4) !important;
+  box-shadow: 0 12px 40px rgba(60, 122, 137, 0.4) !important;
 }
 
 /* --- Responsive Design --- */

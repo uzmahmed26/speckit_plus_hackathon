@@ -37,14 +37,14 @@
 .sectionTitle {
   font-size: 2.8rem; /* Adjusted font size */
   font-weight: 700; /* Adjusted font weight */
-  color: var(--ifm-font-color-base); /* Use global font color */
+  color: var(--ifm-font-color-secondary); /* Use global font color */
   position: relative;
   display: inline-block;
   margin-bottom: var(--ifm-gap-xl); /* Use global spacing */
 }
 
 .titleUnderline {
-  color: var(--ifm-color-primary); /* Use primary color for underline text */
+  color: var(--ifm-font-color-secondary); /* Use primary color for underline text */
   position: relative;
   display: inline-block;
 }
@@ -120,8 +120,8 @@
 
 .moduleCard {
   height: 100%;
-  background: var(--color-card-background);
-  border: 1px solid var(--color-border);
+  background: linear-gradient(135deg, rgba(var(--ifm-color-success-rgb), 0.12), rgba(var(--ifm-color-secondary-rgb), 0.85));
+  border: 1px solid var(--ifm-global-border-color);
   border-radius: 1.5rem;
   padding: 0;
   overflow: hidden;
@@ -138,7 +138,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(24, 144, 255, 0.05), transparent 60%);
+  background: radial-gradient(circle, rgba(var(--ifm-color-secondary-rgb), 0.08), transparent 60%);
   opacity: 0;
   transition: opacity 0.6s ease;
   pointer-events: none;
@@ -146,10 +146,10 @@
 
 .moduleCard:hover {
   transform: translateY(-15px) scale(1.03);
-  border-color: var(--color-primary-base);
+  border-color: var(--ifm-color-primary);
   box-shadow:
     0 15px 30px rgba(0,0,0,0.1),
-    0 0 50px rgba(24, 144, 255, 0.1);
+    0 0 50px rgba(var(--ifm-color-secondary-rgb), 0.1);
 }
 
 .moduleCard:hover::before {
@@ -194,9 +194,8 @@
 
 .iconBackground {
   position: absolute;
-  inset: 0;
-  background: rgba(24, 144, 255, 0.1);
-  border: 2px solid rgba(24, 144, 255, 0.3);
+  background: rgba(var(--ifm-color-secondary-rgb), 0.1);
+  border: 2px solid rgba(var(--ifm-color-secondary-rgb), 0.3);
   border-radius: 1.5rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow:
@@ -206,8 +205,8 @@
 
 .moduleCard:hover .iconBackground {
   transform: scale(1.15) rotate(10deg);
-  background: rgba(24, 144, 255, 0.15);
-  border-color: rgba(24, 144, 255, 0.5);
+  background: rgba(var(--ifm-color-secondary-rgb), 0.15);
+  border-color: rgba(var(--ifm-color-secondary-rgb), 0.5);
   box-shadow:
     0 10px 25px rgba(0,0,0,0.15),
     inset 0 2px 10px rgba(255, 255, 255, 0.08);
@@ -224,7 +223,7 @@
 
 .moduleCard:hover .moduleIcon {
   transform: scale(1.2) rotate(-10deg);
-  filter: drop-shadow(0 6px 12px rgba(24, 144, 255, 0.4));
+  filter: drop-shadow(0 6px 12px rgba(var(--ifm-color-secondary-rgb), 0.4));
 }
 
 .orbitParticle {
@@ -248,23 +247,18 @@
 .moduleTitle {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--color-text-header);
+  color: var(--ifm-font-color-base);
   margin-bottom: 1rem;
   line-height: 1.3;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
-  background-clip: unset;
-  transition: all 0.4s ease;
-}
-
-.moduleCard:hover .moduleTitle {
-  color: var(--color-primary-dark);
+  color: var(--ifm-color-primary-dark);
   transform: translateX(0px);
 }
 
 .moduleDescription {
-  color: var(--color-text-body);
+  color: var(--ifm-font-color-secondary);
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
@@ -273,18 +267,18 @@
 }
 
 .moduleCard:hover .moduleDescription {
-  color: var(--color-text-body);
+  color: var(--ifm-font-color-secondary);
 }
 
 .cardFooter {
   margin-top: auto;
   padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--ifm-global-border-color);
   transition: border-color 0.3s ease;
 }
 
 .moduleCard:hover .cardFooter {
-  border-color: var(--color-primary-light);
+  border-color: var(--ifm-color-primary-light);
 }
 
 .moduleButton {
@@ -296,10 +290,10 @@
   padding: 1.1rem 2rem;
   font-size: 1.1rem;
   font-weight: 700;
-  background: rgba(24, 144, 255, 0.1);
-  border: 1px solid rgba(24, 144, 255, 0.3);
+  background: rgba(var(--ifm-color-secondary-rgb), 0.1);
+  border: 1px solid rgba(var(--ifm-color-secondary-rgb), 0.3);
   border-radius: var(--ifm-border-radius);
-  color: var(--color-text-header);
+  color: var(--ifm-font-color-base);
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -309,19 +303,19 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(24, 144, 255, 0.1), rgba(64, 169, 255, 0.1));
+  background: linear-gradient(135deg, rgba(var(--ifm-color-secondary-rgb), 0.1), rgba(var(--ifm-color-secondary-rgb), 0.1));
   transform: translateX(-100%);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .moduleButton:hover {
-  background: rgba(var(--color-primary-base-rgb), 0.15);
-  border-color: rgba(var(--color-primary-base-rgb), 0.5);
+  background: rgba(var(--ifm-color-primary-rgb), 0.15);
+  border-color: rgba(var(--ifm-color-primary-rgb), 0.5);
   transform: translateY(-4px);
   box-shadow:
-    0 6px 20px rgba(var(--color-primary-base-rgb), 0.2),
-    0 0 30px rgba(var(--color-primary-base-rgb), 0.15);
-  color: var(--color-text-header);
+    0 6px 20px rgba(var(--ifm-color-primary-rgb), 0.2),
+    0 0 30px rgba(var(--ifm-color-primary-rgb), 0.15);
+  color: var(--ifm-font-color-base);
 }
 
 .moduleButton:hover::before {
@@ -350,13 +344,15 @@
 
 .outcomesSection {
   padding: 8rem 2rem;
-  background: var(--color-background-light);
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ifm-global-shadow);
   position: relative;
 }
 
 .outcomesIntro {
   font-size: 1.2rem;
-  color: #94a3b8;
+  color: var(--ifm-font-color-secondary);
   line-height: 1.7;
 }
 
@@ -372,8 +368,8 @@
   gap: 1.2rem;
   padding: 1.2rem;
   margin-bottom: 0.8rem;
-  background: var(--color-card-background);
-  border-left: 3px solid var(--color-primary-base);
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.1), rgba(131, 192, 193, 0.1));
+  border-left: 3px solid var(--ifm-color-success);
   border-radius: var(--ifm-border-radius);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -387,15 +383,15 @@
   top: 0;
   width: 4px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--color-primary-base), var(--color-primary-dark));
+  background: linear-gradient(to bottom, var(--ifm-color-success), var(--ifm-color-info));
   transition: width 0.4s ease;
 }
 
 .outcomesList li:hover {
-  background: var(--color-background-dark);
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.2), rgba(131, 192, 193, 0.2));
   transform: translateX(5px);
   border-left-width: 3px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .outcomesList li:hover::before {
@@ -411,21 +407,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(var(--color-primary-base-rgb), 0.1);
+  background: rgba(var(--ifm-color-success-rgb), 0.1);
   border-radius: 50%;
-  color: var(--color-primary-base);
+  color: var(--ifm-color-success);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .outcomesList li:hover .bulletIcon {
   transform: scale(1.15) rotate(10deg);
-  background: rgba(24, 144, 255, 0.15);
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  background: rgba(var(--ifm-color-success-rgb), 0.15);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .outcomesList li span:last-child {
-  color: var(--color-text-body);
+  color: var(--ifm-font-color-secondary);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -435,16 +431,16 @@
    ============================================ */
 
 .quoteSection {
-  background: linear-gradient(135deg, rgba(30, 27, 75, 0.6), rgba(15, 23, 42, 0.95));
-  border: 2px solid rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  border: 2px solid var(--ifm-global-border-color);
   border-radius: 2.5rem;
   padding: 7rem 2rem;
   margin: 5rem auto;
   max-width: 1300px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 30px 80px rgba(99, 102, 241, 0.3);
-  backdrop-filter: blur(20px);
+  box-shadow: var(--ifm-global-shadow);
+  backdrop-filter: blur(10px);
 }
 
 .quoteSection::before {
@@ -454,13 +450,13 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(24, 144, 255, 0.03), transparent 50%);
+  background: radial-gradient(circle, rgba(var(--ifm-color-success-rgb), 0.08), transparent 50%);
   animation: pulse 5s ease-in-out infinite;
 }
 
 .quoteIcon {
   font-size: 6rem;
-  color: rgba(var(--color-primary-base-rgb), 0.15);
+  color: rgba(var(--ifm-color-primary-rgb), 0.15);
   font-family: Georgia, serif;
   line-height: 0.5;
   margin-bottom: 0.5rem;
@@ -471,7 +467,7 @@
 .quoteTitle {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--color-text-header);
+  color: var(--ifm-font-color-base);
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
@@ -481,7 +477,7 @@
 .quoteText {
   font-size: 1.2rem;
   font-style: italic;
-  color: var(--color-text-body);
+  color: var(--ifm-font-color-secondary);
   line-height: 1.9;
   position: relative;
   z-index: 1;
@@ -490,7 +486,7 @@
 }
 
 .quoteAuthor {
-  color: var(--color-primary-dark);
+  color: var(--ifm-color-primary-dark);
   font-weight: 700;
   font-style: normal;
   font-size: 1.1rem;
@@ -499,9 +495,9 @@
   z-index: 1;
   display: inline-block;
   padding: 0.4rem 1.2rem;
-  background: rgba(var(--color-primary-base-rgb), 0.08);
+  background: rgba(var(--ifm-color-primary-rgb), 0.08);
   border-radius: 50px;
-  border: 1px solid rgba(var(--color-primary-base-rgb), 0.2);
+  border: 1px solid rgba(var(--ifm-color-primary-rgb), 0.2);
 }
 
 /* ============================================
@@ -510,18 +506,20 @@
 
 .hardwareSection {
   padding: 8rem 2rem;
-  background: linear-gradient(180deg, #f8f9fa 0%, rgba(233, 236, 239, 0.3) 50%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .hardwareIntro {
   font-size: 1.2rem;
-  color: #94a3b8;
+  color: var(--ifm-font-color-secondary);
   line-height: 1.7;
 }
 
 .hardwareCard {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(30, 41, 59, 0.6));
-  border: 2px solid rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0.12), rgba(131, 192, 193, 0.85));
+  border: 2px solid rgba(168, 224, 220, 0.35);
   border-radius: 2rem;
   padding: 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -535,15 +533,15 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(24, 144, 255, 0), rgba(24, 144, 255, 0.05));
+  background: linear-gradient(135deg, rgba(168, 224, 220, 0), rgba(168, 224, 220, 0.05));
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .hardwareCard:hover {
-  border-color: rgba(99, 102, 241, 0.7);
+  border-color: var(--ifm-color-primary);
   transform: translateY(-15px) scale(1.03);
-  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.4);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .hardwareCard:hover::before {
@@ -559,22 +557,22 @@
 .hardwareIconWrapper {
   width: 120px;
   height: 120px;
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(168, 224, 220, 0.2);
   border-radius: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 2rem;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 2px solid rgba(99, 102, 241, 0.4);
-  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+  border: 2px solid rgba(168, 224, 220, 0.4);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .hardwareCard:hover .hardwareIconWrapper {
-  background: rgba(99, 102, 241, 0.35);
+  background: rgba(var(--ifm-color-primary-rgb), 0.15);
   transform: scale(1.15) rotate(8deg);
-  border-color: rgba(99, 102, 241, 0.7);
-  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.5);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow);
 }
 
 .hardwareIcon {
@@ -585,14 +583,14 @@
 
 .hardwareCard:hover .hardwareIcon {
   transform: scale(1.2) rotate(-8deg);
-  filter: drop-shadow(0 8px 15px rgba(99, 102, 241, 0.6));
+  filter: drop-shadow(0 8px 15px rgba(var(--ifm-color-primary-rgb), 0.6));
 }
 
 .hardwareTitle {
   font-size: 1.8rem;
   font-weight: 800;
   margin: 2rem 0 1.5rem;
-  color: var(--color-text-header);
+  color: var(--ifm-font-color-base);
   background: none;
   -webkit-text-fill-color: unset;
   background-clip: unset;
@@ -600,7 +598,7 @@
 }
 
 .hardwareDescription {
-  color: var(--color-text-body);
+  color: var(--ifm-font-color-secondary);
   line-height: 1.8;
   font-size: 1rem;
 }
@@ -619,10 +617,10 @@
   padding: 1.3rem 2.8rem;
   font-size: 1.15rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--color-primary-base), var(--color-primary-dark));
+  background: linear-gradient(135deg, var(--ifm-color-success), var(--ifm-color-secondary));
   border: none;
   border-radius: var(--ifm-border-radius);
-  box-shadow: 0 8px 20px rgba(24, 144, 255, 0.2);
+  box-shadow: var(--ifm-global-shadow);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -640,8 +638,8 @@
 }
 
 .hardwareButton:hover {
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary-base));
-  box-shadow: 0 12px 25px rgba(24, 144, 255, 0.3);
+  background: linear-gradient(135deg, var(--ifm-color-secondary), var(--ifm-color-success));
+  box-shadow: var(--ifm-global-shadow);
   transform: translateY(-4px) scale(1.05);
   color: #ffffff;
 }
@@ -665,6 +663,10 @@
 
 .hardwareButton:hover .buttonArrowHardware {
   transform: translateX(6px);
+}
+
+.hardwareButtonText {
+  color: var(--ifm-color-primary);
 }
 
 /* ============================================

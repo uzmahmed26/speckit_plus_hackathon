@@ -177,7 +177,7 @@ export default function Home(): ReactNode {
             <Link
               className={clsx('button button--primary button--lg', styles.hardwareButton)}
               to="/docs/category/7-hardware-setup">
-              <span>See Full Hardware Details</span>
+              <span className={styles.hardwareButtonText}>See Full Hardware Details</span>
               <span className={styles.buttonArrowHardware}>→</span>
             </Link>
           </div>
