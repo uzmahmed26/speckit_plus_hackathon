@@ -5,7 +5,7 @@ import type { WrapperProps } from '@docusaurus/types';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import { useHistory, useLocation } from '@docusaurus/router';
 import PersonalizeButton from '../../../components/PersonalizeButton';
-import { geminiService } from '../../../services/geminiService';
+import { getPersonalizedContent } from '../../../services/geminiService';
 import { authService } from '../../../services/authService';
 
 type Props = WrapperProps<typeof LayoutType>;
@@ -32,9 +32,10 @@ export default function LayoutWrapper(props: Props): JSX.Element {
 
     try {
       const content = document.querySelector('.theme-doc-markdown')?.textContent || '';
-      const personalizedContent = await geminiService.personalizeContent(
+      const personalizedContent = await getPersonalizedContent(
         content,
-        user.preferences
+        user.preferences,
+        metadata.title || 'Page'
       );
 
       // Show personalized content in a modal or alert

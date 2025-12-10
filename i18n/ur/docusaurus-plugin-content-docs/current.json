@@ -62,5 +62,53 @@
   "sidebar.tutorialSidebar.category.tutorial-basics": {
     "message": "tutorial-basics",
     "description": "The label for category 'tutorial-basics' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.1. Physical AI Fundamentals": {
+    "message": "1. Physical AI Fundamentals",
+    "description": "The label for category '1. Physical AI Fundamentals' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.1. Physical AI Fundamentals.link.generated-index.title": {
+    "message": "Physical AI Fundamentals",
+    "description": "The generated-index page title for category '1. Physical AI Fundamentals' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.2. ROS 2 (Robot Operating System)": {
+    "message": "2. ROS 2 (Robot Operating System)",
+    "description": "The label for category '2. ROS 2 (Robot Operating System)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.2. ROS 2 (Robot Operating System).link.generated-index.title": {
+    "message": "ROS 2 (Robot Operating System)",
+    "description": "The generated-index page title for category '2. ROS 2 (Robot Operating System)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.3. Robot Simulation": {
+    "message": "3. Robot Simulation",
+    "description": "The label for category '3. Robot Simulation' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.3. Robot Simulation.link.generated-index.title": {
+    "message": "Robot Simulation",
+    "description": "The generated-index page title for category '3. Robot Simulation' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.5. Vision-Language-Action (VLA)": {
+    "message": "5. Vision-Language-Action (VLA)",
+    "description": "The label for category '5. Vision-Language-Action (VLA)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.5. Vision-Language-Action (VLA).link.generated-index.title": {
+    "message": "Vision-Language-Action (VLA)",
+    "description": "The generated-index page title for category '5. Vision-Language-Action (VLA)' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.6. Humanoid Robotics": {
+    "message": "6. Humanoid Robotics",
+    "description": "The label for category '6. Humanoid Robotics' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.6. Humanoid Robotics.link.generated-index.title": {
+    "message": "Humanoid Robotics",
+    "description": "The generated-index page title for category '6. Humanoid Robotics' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.7. Hardware Setup": {
+    "message": "7. Hardware Setup",
+    "description": "The label for category '7. Hardware Setup' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.7. Hardware Setup.link.generated-index.title": {
+    "message": "Hardware Setup",
+    "description": "The generated-index page title for category '7. Hardware Setup' in sidebar 'tutorialSidebar'"
   }
 }
