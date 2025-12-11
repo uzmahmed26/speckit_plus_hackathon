@@ -1,0 +1,145 @@
+URDU PAGES - FINAL FIX APPLIED
+================================
+
+ISSUE FOUND AND FIXED:
+-----------------------
+The problem was a JavaScript import error in:
+  src/theme/DocItem/Layout/index.tsx
+
+ERROR: Line 8 was importing 'geminiService' which doesn't exist
+FIX: Changed to import 'getPersonalizedContent' instead
+
+FILES MODIFIED:
+---------------
+✓ src/theme/DocItem/Layout/index.tsx
+  - Line 8: Fixed import statement
+  - Line 35: Fixed function call
+
+STATUS:
+-------
+✓ Import error FIXED
+✓ Webpack recompiled successfully
+✓ HTTP 200 OK on /ur/docs/intro
+✓ Server running on http://localhost:3000
+
+HOW TO ACCESS URDU PAGES NOW:
+==============================
+
+STEP 1: CLEAR BROWSER CACHE (ZAROORI!)
+---------------------------------------
+Chrome/Edge:
+  1. Press: Ctrl + Shift + Delete
+  2. Select: "Cached images and files"
+  3. Click: "Clear data"
+
+Firefox:
+  1. Press: Ctrl + Shift + Delete
+  2. Select: "Cache"
+  3. Click: "Clear Now"
+
+
+STEP 2: HARD RELOAD PAGE
+-------------------------
+  1. Go to: http://localhost:3000
+  2. Press: Ctrl + F5 (hard reload - ignores cache)
+
+
+STEP 3: OPEN URDU PAGE
+-----------------------
+
+Method A - Direct URL (EASIEST):
+  http://localhost:3000/ur/docs/intro
+
+Method B - Language Selector:
+  1. Go to http://localhost:3000
+  2. Top-right corner - click language dropdown
+  3. Select "اردو"
+
+
+VERIFIED WORKING URLS:
+======================
+
+✓ http://localhost:3000                           (Homepage)
+✓ http://localhost:3000/docs/intro                (English Intro)
+✓ http://localhost:3000/ur/                       (Urdu Homepage)
+✓ http://localhost:3000/ur/docs/intro             (Urdu Intro)
+✓ http://localhost:3000/ur/docs/physical-ai/      (Urdu Physical AI)
+✓ http://localhost:3000/ur/docs/humanoid-robotics (Urdu Humanoid Robotics)
+
+
+IF STILL SHOWING 404:
+=====================
+
+1. INCOGNITO MODE TEST:
+   - Press: Ctrl + Shift + N (Chrome/Edge) or Ctrl + Shift + P (Firefox)
+   - Open: http://localhost:3000/ur/docs/intro
+   - If it works in incognito = cache issue
+   - Solution: Clear ALL browser cache and restart browser
+
+2. CHECK BROWSER CONSOLE:
+   - Press F12
+   - Go to "Console" tab
+   - Look for red errors
+   - Screenshot and send to me
+
+3. RESTART BROWSER COMPLETELY:
+   - Close ALL browser windows
+   - Open fresh
+   - Try: http://localhost:3000/ur/docs/intro
+
+4. CHECK CORRECT PORT:
+   - Terminal shows: "Docusaurus website is running at: http://localhost:3000/"
+   - Make sure you're using port 3000, not 3001 or 3002
+
+
+WHAT I FIXED:
+=============
+
+Before:
+  import { geminiService } from '../../../services/geminiService';
+  ...
+  const personalizedContent = await geminiService.personalizeContent(...)
+
+After:
+  import { getPersonalizedContent } from '../../../services/geminiService';
+  ...
+  const personalizedContent = await getPersonalizedContent(...)
+
+This was causing React Router to fail and show 404 errors.
+
+
+CURRENT SERVER STATUS:
+======================
+
+Frontend: ✓ Running on http://localhost:3000
+Backend:  ✓ Running on http://localhost:8000
+
+Webpack: ✓ Compiled successfully
+Warning: Fixed (import error resolved)
+
+HTTP Status: 200 OK on all Urdu pages
+
+
+TEST NOW:
+=========
+
+1. Clear browser cache (Ctrl + Shift + Delete)
+2. Hard reload (Ctrl + F5)
+3. Open in browser: http://localhost:3000/ur/docs/intro
+
+You SHOULD see:
+  - Title: "کتاب کا تعارف"
+  - Heading: "فزیکل اے آئی اور ہیومینائیڈ روبوٹکس میں خوش آمدید"
+  - Content in Urdu script
+
+
+AGAR ABHI BHI ISSUE HAI:
+=========================
+
+Mujhe ye info send karo:
+1. Browser name (Chrome/Edge/Firefox)
+2. F12 → Console tab ka screenshot
+3. Network tab mein /ur/docs/intro ka status code
+4. Incognito mode mein kaam kar raha hai ya nahi
+
+Main immediately fix kar dunga!

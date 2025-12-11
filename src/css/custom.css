@@ -62,7 +62,7 @@
   --ifm-gap-xl: 2rem; /* 32px */
 }
 
-/* Consistent pastel theme in dark mode */
+/* Dark mode with proper contrast */
 [data-theme='dark'] {
   --ifm-color-primary: #E8998D;
   --ifm-color-primary-dark: #E37D6E;
@@ -78,20 +78,23 @@
   --ifm-color-warning: #F7DC88;
   --ifm-color-info: #3C7A89;
 
-  --ifm-background-color: #E8F5F7;
-  --ifm-background-surface-color: #FFFFFF;
-  --ifm-font-color-base: #1a1a1a;
-  --ifm-font-color-secondary: #2C5F6F;
+  /* Dark backgrounds */
+  --ifm-background-color: #1b1b1d;
+  --ifm-background-surface-color: #242526;
 
-  --ifm-color-emphasis-100: #F0F9FA;
-  --ifm-color-emphasis-200: #D4EEEF;
-  --ifm-color-emphasis-300: #A8E0DC;
-  --ifm-color-emphasis-400: #83C0C1;
-  --ifm-color-emphasis-500: #5FA5A6;
+  /* Light text for dark mode */
+  --ifm-font-color-base: #e3e3e3;
+  --ifm-font-color-secondary: #A8E0DC;
 
-  --ifm-global-border-color: #A8E0DC;
-  --ifm-global-shadow: 0 8px 32px rgba(60, 122, 137, 0.15);
-  --shadow-color: rgba(60, 122, 137, 0.1);
+  --ifm-color-emphasis-100: #2e333a;
+  --ifm-color-emphasis-200: #383e47;
+  --ifm-color-emphasis-300: #4a5361;
+  --ifm-color-emphasis-400: #5d6978;
+  --ifm-color-emphasis-500: #707a8a;
+
+  --ifm-global-border-color: #3C7A89;
+  --ifm-global-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-color: rgba(0, 0, 0, 0.3);
 }
 
 /* --- Global Base Styles --- */
@@ -102,9 +105,10 @@ body {
   line-height: 1.6; /* Improved global line-height */
 }
 
-/* No specific dark mode body background, as we're enforcing a light theme */
+/* Dark mode body styling */
 html[data-theme='dark'] body {
   background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
 }
 
 /* --- Typography Styles --- */

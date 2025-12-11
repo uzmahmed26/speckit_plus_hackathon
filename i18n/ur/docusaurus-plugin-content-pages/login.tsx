@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { LoginData } from '../types/user';
 import Layout from '@theme/Layout';
-import { authService } from '../services/authService';
+import { authService } from '@site/src/services/authService';
 
 const LoginPage: React.FC = () => {
   const [formData, setFormData] = useState<LoginData>({

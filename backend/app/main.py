@@ -3,12 +3,15 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
+# Load environment variables at the very beginning
 load_dotenv()
+
+from .api import auth, chat
 
 # ===== FASTAPI APPLICATION =====
 app = FastAPI(
-    title="FastAPI Backend with AI Support",
-    description="Backend for authentication, user management, and AI chatbot",
+    title="Physical AI Book API",
+    description="Backend for authentication, user management, and AI RAG chatbot",
     version="1.0.0"
 )
 
@@ -16,6 +19,8 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://localhost:8000",
+    "https://full-project-kappa.vercel.app",
+    "*"  # Allow all origins for development
 ]
 
 app.add_middleware(
@@ -29,21 +34,38 @@ app.add_middleware(
 # ===== STARTUP EVENT =====
 @app.on_event("startup")
 async def startup_event():
-    from app.database.db import init_db
-    init_db()
-    print("Database initialized successfully!")
+    from .database.db import init_db
+    try:
+        init_db()
+        print("[SUCCESS] Database initialized successfully!")
+    except Exception as e:
+        print(f"[WARNING] Database initialization warning: {e}")
+        print("   (This is okay if the database already exists)")
 
 # ===== ROUTES =====
 @app.get("/")
 def read_root():
     return {
-        "message": "FastAPI backend is running!",
-        "features": ["Authentication", "User Management", "AI Chatbot via /api/query"]
+        "message": "Physical AI Book API is running!",
+        "status": "online",
+        "features": [
+            "Authentication (/api/auth)",
+            "RAG Chatbot (/api/query)",
+            "Content Personalization (/api/personalize)",
+            "Translation (/api/translate)"
+        ],
+        "docs": "/docs"
     }
 
-# ===== INCLUDE API ROUTERS =====
-from app.api import auth
-from app.api import chat
+@app.get("/health")
+def health_check():
+    """Health check endpoint"""
+    return {"status": "healthy", "service": "Physical AI Book API"}
 
-app.include_router(auth.router, prefix="/api/auth", tags=["auth"])
-app.include_router(chat.router, prefix="/api", tags=["chat"])
+# ===== INCLUDE API ROUTERS =====
+app.include_router(auth.router, prefix="/api/auth", tags=["Authentication"])
+app.include_router(chat.router, prefix="/api", tags=["Chat & RAG"])
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

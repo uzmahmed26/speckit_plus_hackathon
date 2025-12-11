@@ -1,22 +1,22 @@
 {
   "title": {
-    "message": "Physical AI & Humanoid Robotics",
+    "message": "Physical AI اور Humanoid Robotics",
     "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "Physical AI Logo",
+    "message": "Physical AI لوگو",
     "description": "The alt text of navbar logo"
   },
   "item.label.Chapters": {
-    "message": "Chapters",
+    "message": "ابواب",
     "description": "Navbar item with label Chapters"
   },
   "item.label.Hardware": {
-    "message": "Hardware",
+    "message": "ہارڈویئر",
     "description": "Navbar item with label Hardware"
   },
   "item.label.About": {
-    "message": "About",
+    "message": "تعارف",
     "description": "Navbar item with label About"
   },
   "item.label.GitHub": {

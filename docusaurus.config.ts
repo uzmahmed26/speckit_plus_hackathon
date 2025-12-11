@@ -2,16 +2,17 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
-require('dotenv').config();
+// Load dotenv only if it's available (local development)
+try {
+  require('dotenv').config();
+} catch (e) {
+  // dotenv not available or failed to load - use environment variables directly
+}
 
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'The Ultimate Guide to Embodied Intelligence',
   favicon: 'img/favicon.ico',
-
-  future: {
-    v4: true,
-  },
 
   scripts: [
     {
@@ -27,6 +28,7 @@ const config: Config = {
   projectName: 'full-project', // Your repository name
 
   onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -39,6 +41,7 @@ const config: Config = {
 
   customFields: {
     geminiApiKey: process.env.GEMINI_API_KEY,
+    backendApiUrl: process.env.BACKEND_API_URL || 'http://localhost:8000',
   },
 
   presets: [
@@ -64,9 +67,9 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     colorMode: {
-      respectPrefersColorScheme: false,
       defaultMode: 'light',
       disableSwitch: false,
+      respectPrefersColorScheme: true,
     },
     navbar: {
       title: 'Physical AI & Humanoid Robotics',

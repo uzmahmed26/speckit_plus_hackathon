@@ -1,6 +1,8 @@
 .heroBanner {
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #A8E0DC, #83C0C1);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ifm-global-shadow);
+  color: #1a1a1a;
   padding: 8rem 0;
   text-align: center;
   position: relative;
@@ -13,18 +15,6 @@
 .heroBackground {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(99, 102, 241, 0.15), rgba(15, 23, 42, 0.8));
-  z-index: 0;
-}
-
-.heroGrid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px);
-  background-size: 50px 50px;
-  opacity: 0.4;
   z-index: 0;
 }
 
@@ -38,16 +28,16 @@
 .badge {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  background: rgba(99, 102, 241, 0.15);
-  border: 1px solid rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #F7DC88, #FFE5A0);
+  border: 2px solid #F7DC88;
   border-radius: 50px;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+  box-shadow: 0 4px 15px rgba(247, 220, 136, 0.3);
 }
 
 .badge span {
-  color: #a5b4fc;
+  color: #1a1a1a;
   font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -62,20 +52,20 @@
 }
 
 .titleGradient {
-  background: linear-gradient(to right, #ffffff, #c7d2fe, #818cf8);
+  background: linear-gradient(to right, #2C5F6F, #3C7A89, #2C5F6F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .titleRed {
-  color: #6366f1;
-  text-shadow: 0 0 40px rgba(99, 102, 241, 0.5);
+  color: #E8998D;
+  text-shadow: 0 0 40px rgba(232, 153, 141, 0.4);
 }
 
 .heroSubtitle {
   font-size: 1.5rem;
-  color: #cbd5e1;
+  color: #1a1a1a;
   margin-bottom: 3rem;
   line-height: 1.6;
   max-width: 700px;
@@ -93,13 +83,13 @@
 
 .primaryButton {
   padding: 1.25rem 2.5rem;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, #E8998D, #ECB0A6);
   color: #ffffff;
   font-weight: 700;
   font-size: 1.125rem;
-  border-radius: 0.75rem;
+  border-radius: 24px;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 10px 40px rgba(232, 153, 141, 0.4);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -107,9 +97,9 @@
 }
 
 .primaryButton:hover {
-  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  background: linear-gradient(135deg, #ECB0A6, #F5D9D2);
   transform: scale(1.05);
-  box-shadow: 0 15px 50px rgba(99, 102, 241, 0.7);
+  box-shadow: 0 15px 50px rgba(232, 153, 141, 0.6);
   color: #ffffff;
   text-decoration: none;
 }
@@ -125,21 +115,21 @@
 
 .secondaryButton {
   padding: 1.25rem 2.5rem;
-  background: rgba(99, 102, 241, 0.1);
-  color: #ffffff;
+  background: rgba(131, 192, 193, 0.3);
+  color: #1a1a1a;
   font-weight: 700;
   font-size: 1.125rem;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 24px;
+  border: 2px solid #83C0C1;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
 }
 
 .secondaryButton:hover {
-  background: rgba(99, 102, 241, 0.2);
-  border-color: rgba(99, 102, 241, 0.6);
+  background: rgba(168, 224, 220, 0.5);
+  border-color: #A8E0DC;
   transform: scale(1.05);
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
 }
 
@@ -149,7 +139,7 @@
   left: 5%;
   width: 150px;
   height: 150px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent);
+  background: radial-gradient(circle, rgba(247, 220, 136, 0.4), transparent);
   border-radius: 50%;
   filter: blur(40px);
   animation: float1 6s ease-in-out infinite;
@@ -161,7 +151,7 @@
   right: 5%;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.4), transparent);
+  background: radial-gradient(circle, rgba(232, 153, 141, 0.4), transparent);
   border-radius: 50%;
   filter: blur(60px);
   animation: float2 8s ease-in-out infinite;

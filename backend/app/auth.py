@@ -7,6 +7,8 @@ from jose import JWTError, jwt
 from pydantic import BaseModel
 import os
 from dotenv import load_dotenv
+import hashlib
+import secrets
 
 load_dotenv()
 
@@ -38,13 +40,18 @@ def verify_token(token: str, credentials_exception):
     except JWTError:
         raise credentials_exception
 
-# Password hashing utilities
-from passlib.context import CryptContext
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
+# Password hashing utilities using PBKDF2 (more reliable than bcrypt on Windows)
 def hash_password(password: str) -> str:
-    return pwd_context.hash(password)
+    """Hash a password using PBKDF2-SHA256 with a random salt"""
+    salt = secrets.token_hex(32)  # Generate a random 32-byte salt
+    pwd_hash = hashlib.pbkdf2_hmac('sha256', password.encode('utf-8'), salt.encode('utf-8'), 100000)
+    return f"{salt}${pwd_hash.hex()}"
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    return pwd_context.verify(plain_password, hashed_password)
+    """Verify a password against a hash"""
+    try:
+        salt, pwd_hash = hashed_password.split('$')
+        new_hash = hashlib.pbkdf2_hmac('sha256', plain_password.encode('utf-8'), salt.encode('utf-8'), 100000)
+        return new_hash.hex() == pwd_hash
+    except:
+        return False

@@ -1,18 +1,18 @@
 {
   "link.title.Learn": {
-    "message": "Learn",
+    "message": "سیکھیں",
     "description": "The title of the footer links column with title=Learn in the footer"
   },
   "link.title.Community": {
-    "message": "Community",
+    "message": "کمیونٹی",
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
-    "message": "More",
+    "message": "مزید",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Chapters": {
-    "message": "Chapters",
+    "message": "ابواب",
     "description": "The label of footer link with label=Chapters linking to /docs/intro"
   },
   "link.item.label.Panaverse": {
@@ -20,7 +20,7 @@
     "description": "The label of footer link with label=Panaverse linking to #"
   },
   "link.item.label.Contact": {
-    "message": "Contact",
+    "message": "رابطہ",
     "description": "The label of footer link with label=Contact linking to #"
   },
   "link.item.label.GitHub": {
@@ -28,7 +28,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/panaverse/physical-ai-textbook"
   },
   "copyright": {
-    "message": "Copyright © 2025 Panaverse. Built with Docusaurus.",
+    "message": "Copyright © 2025 Panaverse. Docusaurus کے ساتھ بنایا گیا۔",
     "description": "The footer copyright"
   }
 }

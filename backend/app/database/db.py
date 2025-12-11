@@ -7,15 +7,24 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("NEON_DB_URL")
 
 def get_db_connection():
     """Get database connection"""
+    print(f"Attempting to connect to database at: {DATABASE_URL}")
     try:
+        if not DATABASE_URL:
+            print("ERROR: DATABASE_URL environment variable is not set.")
+            raise ValueError("DATABASE_URL is not set")
         conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+        print("Database connection successful!")
         return conn
+    except psycopg2.OperationalError as e:
+        print(f"FATAL: Database connection failed: {e}")
+        # This type of error is often due to wrong credentials, host, or network issues.
+        raise
     except Exception as e:
-        print(f"Database connection error: {e}")
+        print(f"An unexpected error occurred during database connection: {e}")
         raise
 
 def init_db():

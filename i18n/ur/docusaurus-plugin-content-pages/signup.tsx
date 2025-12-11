@@ -1,8 +1,8 @@
 // frontend/src/pages/signup.tsx
 import React, { useState } from 'react';
 import Layout from '@theme/Layout';
-import SignupForm from '../components/Auth/SignupForm';
-import { authService } from '../services/authService';
+import SignupForm from '@site/src/components/Auth/SignupForm';
+import { authService } from '@site/src/services/authService';
 import { SignupData } from '../types/user';
 
 const SignupPage: React.FC = () => {

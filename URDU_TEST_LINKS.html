@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Pages - Test Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #2e8555; }
+        h2 { color: #1877f2; margin-top: 30px; }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .links {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .links a {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: #e7f3ff;
+            text-decoration: none;
+            color: #1877f2;
+            border-radius: 3px;
+            border-left: 4px solid #1877f2;
+        }
+        .links a:hover {
+            background: #cce5ff;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>✓ URDU PAGES WORKING - Click Links Below</h1>
+
+    <div class="success">
+        <strong>✓ Frontend Running:</strong> http://localhost:3000<br>
+        <strong>✓ Urdu Configured:</strong> Yes<br>
+        <strong>✓ Translation Files:</strong> Present<br>
+        <strong>✓ Status:</strong> All pages returning 200 OK
+    </div>
+
+    <h2>Method 1: Click These Direct Links (EASIEST)</h2>
+    <div class="links">
+        <a href="http://localhost:3000/ur/" target="_blank">
+            🏠 Urdu Homepage
+        </a>
+        <a href="http://localhost:3000/ur/docs/intro" target="_blank">
+            📖 Urdu Introduction (کتاب کا تعارف)
+        </a>
+        <a href="http://localhost:3000/ur/docs/physical-ai/" target="_blank">
+            🤖 Physical AI Chapter (Urdu)
+        </a>
+        <a href="http://localhost:3000/ur/docs/humanoid-robotics/" target="_blank">
+            🦾 Humanoid Robotics Chapter (Urdu)
+        </a>
+        <a href="http://localhost:3000/ur/docs/ros2/" target="_blank">
+            ⚙️ ROS 2 Chapter (Urdu)
+        </a>
+        <a href="http://localhost:3000/ur/docs/simulation/" target="_blank">
+            🎮 Simulation Chapter (Urdu)
+        </a>
+        <a href="http://localhost:3000/ur/docs/vla/" target="_blank">
+            👁️ VLA Chapter (Urdu)
+        </a>
+        <a href="http://localhost:3000/ur/docs/hardware/" target="_blank">
+            🔧 Hardware Chapter (Urdu)
+        </a>
+    </div>
+
+    <h2>Method 2: Use Language Selector</h2>
+    <div class="note">
+        <strong>Steps:</strong><br>
+        1. Go to <a href="http://localhost:3000" target="_blank">http://localhost:3000</a><br>
+        2. Look at TOP-RIGHT corner of navbar<br>
+        3. Click language dropdown (shows "English" or globe icon)<br>
+        4. Select "اردو" (Urdu)<br>
+        5. Page reloads in Urdu
+    </div>
+
+    <h2>Method 3: Add /ur/ to Any URL</h2>
+    <div class="note">
+        <strong>Pattern:</strong><br>
+        English URL: <code>http://localhost:3000/docs/PAGE</code><br>
+        Urdu URL: <code>http://localhost:3000/ur/docs/PAGE</code><br><br>
+
+        <strong>Example:</strong><br>
+        English: http://localhost:3000/docs/physical-ai/<br>
+        Urdu: http://localhost:3000<strong style="color: red;">/ur</strong>/docs/physical-ai/
+    </div>
+
+    <h2>If You Still Get 404:</h2>
+    <div class="note">
+        <strong>Reason:</strong> That specific page might not have Urdu translation yet.<br><br>
+
+        <strong>Check:</strong><br>
+        Open terminal and run:<br>
+        <code>ls i18n/ur/docusaurus-plugin-content-docs/current/</code><br><br>
+
+        This shows which pages are translated to Urdu.<br>
+        If a page is missing → it needs to be translated.
+    </div>
+
+    <h2>Verified Working Pages:</h2>
+    <div class="success">
+        ✓ intro.md<br>
+        ✓ physical-ai/ (index.md, introduction.md, + subfolders)<br>
+        ✓ humanoid-robotics/ (8+ files including bipedal-locomotion.md)<br>
+        ✓ ros2/<br>
+        ✓ simulation/<br>
+        ✓ vla/<br>
+        ✓ hardware/<br>
+        ✓ isaac-platform/
+    </div>
+
+    <h2>Test Right Now:</h2>
+    <div class="links">
+        <a href="http://localhost:3000/ur/docs/intro" target="_blank" style="background: #d4edda; border-color: #28a745;">
+            <strong>👉 CLICK HERE TO SEE URDU PAGE</strong><br>
+            <small>Opens: Introduction in Urdu (کتاب کا تعارف)</small>
+        </a>
+    </div>
+
+    <div class="note" style="margin-top: 30px;">
+        <strong>📝 Note:</strong> Make sure both servers are running:<br>
+        • Frontend: <code>npm start</code> (port 3000)<br>
+        • Backend: <code>python backend/main.py</code> (port 8000)
+    </div>
+</body>
+</html>

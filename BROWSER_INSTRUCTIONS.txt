@@ -1,0 +1,171 @@
+BROWSER SE URDU PAGES KAISE DEKHEN
+===================================
+
+SERVER STATUS: ✓ RUNNING
+- Frontend: http://localhost:3000 (Working ✓)
+- Backend: http://localhost:8000 (Working ✓)
+- Urdu Files: 44 files present ✓
+- HTTP Status: 200 OK ✓
+
+
+BROWSER MEIN YE STEPS FOLLOW KARO:
+===================================
+
+STEP 1: Clear Browser Cache (ZAROORI!)
+---------------------------------------
+Chrome:
+  1. Ctrl + Shift + Delete press karo
+  2. "Cached images and files" select karo
+  3. "Clear data" click karo
+
+Firefox:
+  1. Ctrl + Shift + Delete press karo
+  2. "Cache" select karo
+  3. "Clear Now" click karo
+
+Edge:
+  1. Ctrl + Shift + Delete press karo
+  2. "Cached images and files" check karo
+  3. "Clear now" click karo
+
+
+STEP 2: Hard Reload (Force Refresh)
+------------------------------------
+1. Browser mein jao: http://localhost:3000
+2. Ctrl + F5 press karo (ya Ctrl + Shift + R)
+   (Ye cache ignore karke fresh page load karta hai)
+
+
+STEP 3: Open Urdu Page
+-----------------------
+Method A - Language Selector Use Karo:
+  1. http://localhost:3000 kholo
+  2. Top-right corner mein language dropdown dikhai dega
+  3. Dropdown click karo
+  4. "اردو" (Urdu) select karo
+  5. Page reload hoga Urdu mein
+
+Method B - Direct URL:
+  Browser address bar mein type karo:
+  http://localhost:3000/ur/docs/intro
+
+  Enter press karo
+
+
+AGAR ABHI BHI 404 DIKHE:
+=========================
+
+OPTION 1: Incognito/Private Window Use Karo
+--------------------------------------------
+Chrome: Ctrl + Shift + N
+Firefox: Ctrl + Shift + P
+Edge: Ctrl + Shift + N
+
+Incognito window mein:
+http://localhost:3000/ur/docs/intro
+Ye URL kholo
+
+
+OPTION 2: Browser Console Check Karo
+-------------------------------------
+1. F12 press karo (Developer Tools)
+2. "Console" tab mein jao
+3. Koi red errors dikhen? Screenshot bhejo
+
+
+OPTION 3: Network Tab Check Karo
+---------------------------------
+1. F12 press karo
+2. "Network" tab mein jao
+3. Page refresh karo (Ctrl + F5)
+4. "intro" search karo
+5. Usko click karo
+6. Status Code kya hai? (200, 404, etc.)
+
+
+TEST KARNE KE LIYE YE URLS TRY KARO:
+=====================================
+
+1. English Homepage:
+   http://localhost:3000
+   (Ye MUST work - agar ye nahi chala to server issue hai)
+
+2. English Intro:
+   http://localhost:3000/docs/intro
+   (Ye bhi MUST work)
+
+3. Urdu Homepage:
+   http://localhost:3000/ur/
+   (Urdu locale ka homepage)
+
+4. Urdu Intro:
+   http://localhost:3000/ur/docs/intro
+   (Target page - isme Urdu text hona chahiye)
+
+
+YE CHECK KARO BROWSER MEIN:
+============================
+
+✓ Server chal raha hai?
+  Check: http://localhost:3000
+  Agar "Physical AI & Humanoid Robotics" homepage dikhe = Good!
+
+✓ English page work kar raha?
+  Check: http://localhost:3000/docs/intro
+  Agar English intro dikhe = Good!
+
+✓ Language selector dikh raha hai?
+  Top-right corner mein globe icon ya language name
+  Agar nahi dikha = Configuration issue
+
+✓ Browser console mein errors?
+  F12 → Console tab
+  Red errors = Problem hai
+
+
+COMMON ISSUES:
+==============
+
+Issue 1: Browser ne old cache store kar rakha hai
+Fix: Ctrl + F5 (hard reload)
+
+Issue 2: Service Worker old page cache kar raha
+Fix: F12 → Application → Service Workers → Unregister
+
+Issue 3: Wrong URL format
+Fix: Ensure URL is: http://localhost:3000/ur/docs/intro
+      NOT: http://localhost:3000/docs/ur/intro
+
+Issue 4: Server restart needed
+Fix: Terminal mein Ctrl + C, phir npm start phir se
+
+
+EXACT URL JO WORK KARNA CHAHIYE:
+=================================
+
+http://localhost:3000/ur/docs/intro
+
+Agar ye URL browser mein dalke 404 aa raha hai:
+1. Screenshot bhejo (full browser window)
+2. F12 → Console tab ka screenshot bhejo
+3. Terminal output ka screenshot bhejo
+
+
+MUJHE YE BATAO:
+===============
+
+1. Konsa browser use kar rahe ho? (Chrome/Firefox/Edge)
+2. Ye URL kya show kar raha hai? http://localhost:3000
+3. English intro page kaam kar raha? http://localhost:3000/docs/intro
+4. Browser console mein koi error? (F12 → Console)
+5. Network tab mein status code kya hai? (F12 → Network)
+
+
+SERVER LOGS CHECK:
+==================
+
+Terminal mein ye output dikhai dena chahiye:
+[SUCCESS] Docusaurus website is running at: http://localhost:3000/
+
+Agar different port show ho raha (3001, 3002):
+- Us port ko use karo instead: http://localhost:3001/ur/docs/intro
