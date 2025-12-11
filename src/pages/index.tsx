@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import HeroSection from '@site/src/components/HeroSection';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -14,14 +15,20 @@ interface FadeInSectionProps {
   className?: string;
 }
 
-const FadeInSection = ({ children, className }: FadeInSectionProps) => {
+const FadeInSection = ({ children, className }: FadeInSectionProps): ReactNode => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
+    fallbackInView: true, // Ensures content is visible if IntersectionObserver fails
   });
 
   return (
-    <div ref={ref} className={clsx(className, styles.fadeInSection, { [styles.isVisible]: inView })}>
+    <div
+      ref={ref}
+      className={clsx(className, styles.fadeInSection, styles.isVisible, {
+        [styles.animated]: inView
+      })}
+    >
       {children}
     </div>
   );
