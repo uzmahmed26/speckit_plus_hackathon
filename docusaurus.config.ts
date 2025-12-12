@@ -21,11 +21,11 @@ const config: Config = {
     },
   ],
 
-  url: 'https://full-project-kappa.vercel.app', // Your Vercel URL
-  baseUrl: '/', // Base URL for Vercel (root)
+  url: 'https://uzmahmed26.github.io', // Your GitHub Pages URL
+  baseUrl: '/speckit_plus_hackathon/', // Base URL for GitHub Pages
 
-  organizationName: 'samade747', // Your GitHub username
-  projectName: 'full-project', // Your repository name
+  organizationName: 'uzmahmed26', // Your GitHub username
+  projectName: 'speckit_plus_hackathon', // Your repository name
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
