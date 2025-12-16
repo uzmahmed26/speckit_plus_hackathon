@@ -21,8 +21,8 @@ const config: Config = {
     },
   ],
 
-  url: 'https://uzmahmed26.github.io', // Your GitHub Pages URL
-  baseUrl: '/speckit_plus_hackathon/', // Base URL for GitHub Pages
+  url: 'https://speckit-plus-hackathon.vercel.app', // Your Vercel URL
+  baseUrl: '/', // Base URL for Vercel deployment
 
   organizationName: 'uzmahmed26', // Your GitHub username
   projectName: 'speckit_plus_hackathon', // Your repository name
