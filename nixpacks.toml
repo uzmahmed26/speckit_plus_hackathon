@@ -1,6 +1,5 @@
 # Force Python provider (ignore Node.js package.json)
-[providers]
-python = "3.11"
+providers = ["python"]
 
 [variables]
 NIXPACKS_PYTHON_VERSION = "3.11"
