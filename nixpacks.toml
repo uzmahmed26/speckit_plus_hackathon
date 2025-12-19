@@ -1,17 +1,5 @@
-# Force Python provider (ignore Node.js package.json)
+# Simple Python configuration for Railway
 providers = ["python"]
 
-[variables]
-NIXPACKS_PYTHON_VERSION = "3.11"
-
-[phases.setup]
-nixPkgs = ["python311", "python311Packages.pip", "python311Packages.setuptools"]
-
-[phases.install]
-cmds = ["python3 -m pip install --upgrade pip setuptools wheel", "python3 -m pip install -r requirements.txt"]
-
-[phases.build]
-cmds = ["echo 'Build complete - Python packages installed'"]
-
 [start]
-cmd = "python3 -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT"
+cmd = "uvicorn backend.main:app --host 0.0.0.0 --port $PORT"
