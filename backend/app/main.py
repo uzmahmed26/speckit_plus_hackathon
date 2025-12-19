@@ -20,6 +20,8 @@ origins = [
     "http://localhost:3000",
     "http://localhost:8000",
     "https://full-project-kappa.vercel.app",
+    "https://speckit-plus-hackathon.vercel.app",
+    "https://*.railway.app",  # Allow all Railway deployments
     "*"  # Allow all origins for development
 ]
 
@@ -68,4 +70,7 @@ app.include_router(chat.router, prefix="/api", tags=["Chat & RAG"])
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    import os
+    # Use PORT environment variable (required for Railway) or fallback to 8000
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
