@@ -5,6 +5,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "public": true,
+  "installCommand": "npm install",
+  "framework": null,
   "github": {
     "silent": true
   },
