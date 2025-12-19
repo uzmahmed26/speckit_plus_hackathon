@@ -1,0 +1,13 @@
+# Ignore frontend Node.js files during backend deployment
+package.json
+package-lock.json
+node_modules/
+src/
+static/
+docs/
+i18n/
+babel.config.js
+docusaurus.config.ts
+sidebars.ts
+tsconfig.json
+jest.config.js
