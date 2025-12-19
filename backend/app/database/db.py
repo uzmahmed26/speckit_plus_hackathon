@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Support both Render (DATABASE_URL) and Neon (NEON_DB_URL)
-DATABASE_URL = os.getenv("DATABASE_URL") or os.getenv("NEON_DB_URL")
+# Use NEON_DB_URL for database connection
+DATABASE_URL = os.getenv("NEON_DB_URL")
 
 def get_db_connection():
     """Get database connection"""
