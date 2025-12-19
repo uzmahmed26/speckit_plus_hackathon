@@ -2,11 +2,20 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+import sys
+import traceback
 
 # Load environment variables at the very beginning
 load_dotenv()
 
-from .api import auth, chat
+# Safe import of API routes
+try:
+    from .api import auth, chat
+    print("[SUCCESS] API routes imported successfully")
+except Exception as e:
+    print(f"[ERROR] Failed to import API routes: {e}")
+    traceback.print_exc()
+    sys.exit(1)
 
 # ===== FASTAPI APPLICATION =====
 app = FastAPI(
@@ -36,13 +45,15 @@ app.add_middleware(
 # ===== STARTUP EVENT =====
 @app.on_event("startup")
 async def startup_event():
-    from .database.db import init_db
+    """Initialize database (non-blocking - app starts even if DB fails)"""
     try:
+        from .database.db import init_db
         init_db()
         print("[SUCCESS] Database initialized successfully!")
     except Exception as e:
-        print(f"[WARNING] Database initialization warning: {e}")
-        print("   (This is okay if the database already exists)")
+        print(f"[WARNING] Database initialization failed: {e}")
+        print("[INFO] App will continue without database. Auth features may not work.")
+        print("[INFO] Check NEON_DB_URL environment variable if you need database.")
 
 # ===== ROUTES =====
 @app.get("/")
